@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import {useEffect} from 'react'
 import './App.css';
+import routes from './routes'
+import Header from './Components/Header'
+import axios from 'axios'
+import {useDispatch} from 'react-redux'
+import {setUser} from './redux/authReducer'
+import {setCart} from './redux/cartReducer'
+
+
+
 
 function App() {
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    axios.get('/auth/me').then(res => {
+      dispatch(setUser(res.data.user))
+      dispatch(setCart(res.data.cart))
+    }).catch((err) => {
+      console.log(err.response)
+    })
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      {routes}
+      <footer>
+        <p>CONTACT US</p>
+        <p>Available 9AM-6PM E.S.T.</p>
+        <p>800-578-2834</p>
+        <p>Cheka.Clay@gmail.com</p>
+      </footer>
     </div>
   );
 }
 
-export default App;
+export default App
