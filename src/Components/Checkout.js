@@ -1,16 +1,19 @@
-// import React from 'react';
-// import { Switch } from 'react-router-dom';
-// import {BroweserRouter as Switch, Route} from 'react-router-dom'
-// import PaymentForm from './PaymentForm'
+import React from 'react';
+import { Elements } from '@stripe/react-stipe-js'
+import { loadStripe } from '@stripe/stripe-js'
 
-// const Checkout = (props) => {
+const PUBLIC_KEY = "pk_test_51J2NLDFLuspDFFBUSAld0obQjGRG3MyRQSRFrtJQtHINw63cXJnK3Z4y1TlbJq9p7EHQ2zzBxwY7RPAY1PgquaEK00TIKwYIB7"
 
-//     return (
-//         <div className = 'checkout'>
-//            <h1>Checkout page </h1>
-//            <PaymentForm />
-//            </div>
-//     )
-// }
+const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
-// export default Checkout
+const Checkout = (props) => {
+
+    return (
+           <Elements stripe={stripeTestPromise}>
+           <PaymentForm />
+           </Elements>
+        
+    )
+}
+
+export default Checkout
