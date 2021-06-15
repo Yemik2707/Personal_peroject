@@ -1,7 +1,6 @@
 import {useEffect} from 'react'
 import './App.css';
 import routes from './routes'
-import Header from './Components/Header'
 import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import {setUser} from './redux/authReducer'
@@ -23,13 +22,12 @@ function App() {
   })
   return (
     <div className="app">
-      <Header />
       {routes}
       <footer>
-        <p>CONTACT US</p>
-        <p>Available 9AM-6PM E.S.T.</p>
-        <p>800-578-2834</p>
-        <p>Cheka.Clay@gmail.com</p>
+        <h5>CONTACT US</h5>
+        <h6>Available 9AM-6PM E.S.T.</h6>
+        <h6>800-578-2834</h6>
+        <h6>Cheka.Clay@gmail.com</h6>
       </footer>
     </div>
   );

@@ -12,13 +12,16 @@ VALUES
 ('Red bundle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623093062/3F39AC2B-C979-4FE7-8FBC-10A260D7982C_1_201_a_zvpxdf.jpg')
 ('Green bundle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623092173/AB567724-0E6C-4F81-9D21-0CCCDED4C48D_1_201_a_wimd59.jpg')
 ('Pink dangle with Aztec print', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623092153/8FE92D04-37D5-458D-9085-942728CF8032_1_201_a_xbnh1q.jpg')
-('Green & gold for Spring time', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623092127/1F952402-7936-457D-946E-4D12BB6BDC3D_1_201_a_qdsamu.jpg')
+('Green & gold bundle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623092127/1F952402-7936-457D-946E-4D12BB6BDC3D_1_201_a_qdsamu.jpg')
 ('Orange & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623091902/487268F3-61B0-476F-B470-3F63755ED273_1_201_a_vqhb9v.jpg')
 ('Purple & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623091820/3F596050-6290-411A-B36E-BC1AD1DA9664_1_201_a_goglrt.jpg')
 ('Magenta & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623091518/B4668CC6-F47B-4CE6-9969-4B53733FE1A9_1_201_a_mcd0rk.jpg')
-('Spring is here', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623091455/BF37568A-E46A-40BC-974A-52438C5EA5A9_1_201_a_u845ju.jpg')
+('Cherry Blossom(pink)', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623091455/BF37568A-E46A-40BC-974A-52438C5EA5A9_1_201_a_u845ju.jpg')
 ('Peacock & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623086716/CCC6AC2E-E8D4-41A2-91CA-25DA25D132EE_1_201_a_kzobgs.jpg')
-
+('Royal Green', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726166/937672F2-FA22-47DE-91D3-3C31F7451334_1_201_a_s2nhir.jpg')
+('Orange dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726139/2F5C7D93-6DD2-4A0B-A833-B519202E0350_vk0bew.jpg')
+('Black & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726111/D30F47CF-53D6-479C-9FE8-F5D2985720F9_btjm8p.jpg')
+('Pink & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726079/3B2F1F08-9F72-42CD-9712-CE12E4F8259B_uot3wq.jpg')
 UPDATE products 
 SET product_name = 'green earrings' 
 WHERE product_id = 1;

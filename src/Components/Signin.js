@@ -4,7 +4,7 @@ import {setUser} from '../redux/authReducer.js';
 import axios from 'axios';
 
 
-const Header = (props) => {
+const Signin = (props) => {
 
     const logout = () => {
         axios.delete("/auth/logout")
@@ -15,20 +15,21 @@ const Header = (props) => {
             console.log(err)
             alert("There was an issue logging out. Please try again.")
         })
-         
-      };
+    } 
+     console.log(props)
 
     return (
-        <div>
-         <header className = 'header'>
-            {props.auth.user ?<li className = 'logout' onClick={logout}>Log out</li> 
+        <>
+            {props.auth.user ?<li  className='nav-links' onClick={logout}>Log out</li> 
             :
-            <Link to='/auth'>Sign In</Link> }               
-         </header>
-        </div>
+            <Link     
+            to='/auth'
+            className='nav-links'
+            onClick={props.closeMobileMenu}>Sign In</Link> }               
+        </>
     )
 }
 const mapStateToProps = state => state;
 
-export default withRouter(connect(mapStateToProps, {setUser})(Header));
+export default withRouter(connect(mapStateToProps, {setUser})(Signin));
     

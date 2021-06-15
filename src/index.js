@@ -4,7 +4,7 @@ import App from "./App"
 import { Provider } from "react-redux"
 import { HashRouter } from "react-router-dom"
 import store from "./redux/store"
-import Navbar from "./Components/responsive/Navbar"
+import Navbar from "./Components/Navbar"
 
 
 ReactDOM.render(

@@ -4,6 +4,7 @@ import {setCart} from '../redux/cartReducer'
 import {useEffect} from 'react'
 import {Link} from 'react-router-dom';
 
+
 const Cart= (props) => {
   const {cart} = useSelector((store) => store.cartReducer)
   const dispatch = useDispatch()
@@ -42,30 +43,37 @@ const Cart= (props) => {
       }
   }
       console.log(cart)
-
-
+     
+      
     return (
     <div className ='carts'>
        <h2> Your Bag </h2>
-       <button className = 'checkoutfromcart' onClick={<Link  to='/checkout'>About Us</Link>}>CONTINUE TO CHECKOUT</button>
       {cart.map((products) => {
         return(
-          <div key={products.product_cart_id}>
+          <div  className='oneitem' key={products.product_cart_id}>
             <img className = 'cartimage' src={products.product_image} alt="earrings"/> 
             <h4>{products.product_name}</h4>
+            
             <div classname = 'deletecartitem'>
-            <button onClick={() => handleDeleteFromCart(products.product_id)}>Remove</button>
+            <button className='remove'onClick={() => handleDeleteFromCart(products.product_id)}>delete</button>
             </div>
             <div className = 'editcart'>
-            <button onClick={() => handleChangeQty(products.product_id, products.quantity - 1)}>-</button>
+            <button className ='minus' onClick={() => handleChangeQty(products.product_id, products.quantity - 1)}>-</button>
             <h5>Qty: {products.quantity}</h5>
-            <button onClick={() => handleChangeQty(products.product_id, products.quantity + 1)}>+</button>
-            </div>
+            <button className ='plus' onClick={() => handleChangeQty(products.product_id, products.quantity + 1)}>+</button>
+            </div> 
+    
           </div>
         )
-        })}
+        
+      })}  
+   
+            <Link className='checkout' to='/checkout'> <button>CONTINUE TO CHECKOUT</button></Link>
+{/*   
+  <p className = 'bagempty' >bag is empty <i class="fas fa-frown"/></p> */}
     </div>
     )
 }
+
 
 export default Cart

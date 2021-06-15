@@ -28,8 +28,12 @@ const Auth = (props) => {
 
     <div className= "auth">
       <div className = "authheader">
-        <Link to = '/auth'>LOGIN</Link>
-        <Link to = '/register'>NEW CUSTOMER</Link>
+        <div >
+        <Link className='loginlink' to = '/auth'>LOGIN</Link>
+        </div>
+       <div >
+        <Link className='newcustomerlink' to = '/register'>NEW CUSTOMER</Link>
+      </div>
       </div>
     
       <p>email*</p>
@@ -38,9 +42,8 @@ const Auth = (props) => {
       <input className = 'password' value={password} onChange={(e) => setPassword(e.target.value)} />
       <div className = 'authbuttons'>
       <button className = 'login' onClick={handleLogin}>Login</button>
-      <p>Forgot your password?</p>
+      <p className='forgotpw'>Forgot your password?</p>
       
-     
       </div>
     </div>
    

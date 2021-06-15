@@ -4,10 +4,17 @@ import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
 import React from 'react'
 
+
 const Products = (props) => {
 const [products, setProducts] = useState([])
+const [search, setSearch] = useState('')
+const [click, setClick] = useState(false)
+
+const handleClick = () => setClick(!click)
+
 const {user} = useSelector((store) => store.auth)
 const {cart} = useSelector((store) => store.cartReducer)
+
 const dispatch = useDispatch()
 
   useEffect(() => {
@@ -54,25 +61,35 @@ const dispatch = useDispatch()
     }
   }
   console.log('user:', user)
+
+  const filteredProducts = products.filter(product => {
+    return product.product_name.toLowerCase().includes(search.toLowerCase())
+  })
+
+  const cartQuantity = () => {
+let count = 0;
+   if (handleAddToCart === click){
+     count++
+     return count
+   }
+   console.log(count)
+  }
   return(
     <div className = 'products'>
-{/*       
-      <select>
-        <option selected value="Filter">Filter</option>
-        <option value="Bundle">Bundles</option>
-        <option value="For him & her">For him & her</option>
-        
-      </select> */}
+      <input type='text' placeholder='filter' onChange= { e => setSearch(e.target.value)}></input>
+      
+    
       <div className = 'product-list'>
-      {products.map((product) => {
+      {filteredProducts.map((product) => {
         return (
           <div className ='oneproduct' key={product.product_id}>
-            <img className = 'image' src={product.product_image} alt="earrings"/> 
-            <h4>{product.product_name}</h4>
+            <img className = 'productimage' src={product.product_image} alt="earrings"/> 
+            <h5>{product.product_name}</h5>
             {user && <button className = 'addtobag' onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
           </div>
         )
-      })}
+      })} 
+     {cartQuantity}
       </div>
     </div>
   )

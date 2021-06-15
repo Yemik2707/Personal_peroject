@@ -6,6 +6,7 @@ import Products from './Components/Products'
 import Design from './Components/Design'
 import Checkout from './Components/Checkout'
 import AboutUs from './Components/AboutUs'
+import Signin from './Components/Signin'
 
 
 export default ( 
@@ -17,6 +18,7 @@ export default (
 <Route path='/design' component={Design} />
 <Route path='/checkout' component={Checkout} />
 <Route path='/aboutus' component={AboutUs} />
+<Route path='/signin' component={Signin} />
 
 </Switch>
 )
