@@ -1,6 +1,6 @@
 import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {setUser} from '../redux/authReducer.js';
+import {setUser} from '../../redux/authReducer.js';
 import axios from 'axios';
 
 

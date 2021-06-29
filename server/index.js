@@ -3,12 +3,14 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
+// const stripe = require("stripe") (process.env.STRIPE_SECERET_TEST)
+// const bodyParser = require("body-parser")
+// const cors =require("cors")
 // Controllers 
 const authCtrl = require('./controllers/authController')
 const productCtrl = require('./controllers/productController')
 const cartCtrl = require('./controllers/cartController')
-const designCtrl = require('./controllers/designController')
-const checkoutCtrl = require('./controllers/checkoutController')
+// const paymentCtrl = require('./controllers/PaymentCtrl')
 // app instance created 
 const app = express();
 
@@ -16,6 +18,9 @@ const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
 
 // top level middeleware
+// app.use(bodyParser.urlencoded({extended: true}))
+// app.use(bodyParser.json())
+// app.use(cors())
 app.use(express.json());
 app.use(session({
   secret: SESSION_SECRET,
@@ -23,6 +28,32 @@ app.use(session({
   saveUninitialized:true,
   express:{maxAge: 1000 *60 *60 *20}
 }))
+
+
+// stripe
+// app.post("/payment", cors(), async (req, res) => {
+//   let{amount, id} =req.body
+//   try {
+//     const payment = await stripe.paymentIntents.create({
+//       amount,
+//       currency: "USD",
+//       description:"",
+//       payment_method: id,
+//       confirm:true
+//     })
+//     console.log("Payment", payment)
+//     res.json({
+//       message: "Payment successful",
+//       success:true
+//     })
+//   } catch (error) {
+//     console.log("Error", error)
+//     res.json({
+//       message: "Payment failed",
+//       success:false
+//     })
+//   }
+// })
 // Database conncetion 
 massive({
     connectionString: CONNECTION_STRING,
@@ -52,13 +83,9 @@ app.post('/api/cart/:product_id', cartCtrl.addToCart)
 app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
 app.put('/api/cart/:product_id', cartCtrl.changeCartQty)
 
-
-// Design 
-app.get('/api/design', designCtrl.getDesign)
-app.post('/api/design/:design_id', designCtrl.addToDesign)
-
+ 
 
 // Checkout
-app.get('/api/checkout', checkoutCtrl.getCheckout)
 
+// app.post('/payment', cors(), paymentCtrl.addPayment)
 

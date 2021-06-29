@@ -42,7 +42,12 @@ const Cart= (props) => {
         })
       }
   }
-      console.log(cart)
+
+
+    console.log(cart)
+  
+
+
      
       
     return (
@@ -51,6 +56,7 @@ const Cart= (props) => {
       {cart.map((products) => {
         return(
           <div  className='oneitem' key={products.product_cart_id}>
+            <p>Total={products.quantity}</p>
             <img className = 'cartimage' src={products.product_image} alt="earrings"/> 
             <h4>{products.product_name}</h4>
             
@@ -61,8 +67,10 @@ const Cart= (props) => {
             <button className ='minus' onClick={() => handleChangeQty(products.product_id, products.quantity - 1)}>-</button>
             <h5>Qty: {products.quantity}</h5>
             <button className ='plus' onClick={() => handleChangeQty(products.product_id, products.quantity + 1)}>+</button>
+ 
             </div> 
-    
+           
+ 
           </div>
         )
         

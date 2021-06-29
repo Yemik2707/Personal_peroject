@@ -1,33 +1,20 @@
-import {useEffect} from 'react'
+
 import './App.css';
 import routes from './routes'
-import axios from 'axios'
-import {useDispatch} from 'react-redux'
-import {setUser} from './redux/authReducer'
-import {setCart} from './redux/cartReducer'
-
 
 
 
 function App() {
 
-  const dispatch = useDispatch()
-  useEffect(() => {
-    axios.get('/auth/me').then(res => {
-      dispatch(setUser(res.data.user))
-      dispatch(setCart(res.data.cart))
-    }).catch((err) => {
-      console.log(err.response)
-    })
-  })
+  
   return (
     <div className="app">
       {routes}
       <footer>
         <h5>CONTACT US</h5>
-        <h6>Available 9AM-6PM E.S.T.</h6>
-        <h6>800-578-2834</h6>
+        <a   rel="noreferrer" target="_blank" href="https://www.instagram.com/cheka.clay/"><img className='insta' src = 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624753690/3AC64D8C-2183-4140-9CCD-C6919113B6BF_oe3blc.png' alt = 'instaggram'/></a>
         <h6>Cheka.Clay@gmail.com</h6>
+        <h6>Available 9AM-6PM E.S.T.</h6>
       </footer>
     </div>
   );

@@ -22,6 +22,12 @@ VALUES
 ('Orange dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726139/2F5C7D93-6DD2-4A0B-A833-B519202E0350_vk0bew.jpg')
 ('Black & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726111/D30F47CF-53D6-479C-9FE8-F5D2985720F9_btjm8p.jpg')
 ('Pink & gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623726079/3B2F1F08-9F72-42CD-9712-CE12E4F8259B_uot3wq.jpg')
+('Blue droplets', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624050829/3D0E7588-8F3B-4AFE-A1A1-7BEEEA536A85_1_201_a_gcpo9o.jpg')
+('Burgendy dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624345108/9F07D8FA-A832-4700-9230-A35AB7C7EE0C_1_201_a_hspt56.jpg')
+('Pink', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624745833/730B1242-A479-4504-A50A-30E0B8472C10_ho3mbe.jpg')
+('Purple', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624750758/640E18E8-2766-41BD-8806-CB70E5385F92_dyrvgf.jpg')
+('Gold & black', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624750793/172B64AD-E24A-4A1A-8E15-6706E1DB7703_1_201_a_ndazxz.jpg')
+('Orange', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624750837/5E862F47-9C19-40C8-83BC-96A99B4CF495_g7czdp.jpg')
 UPDATE products 
 SET product_name = 'green earrings' 
 WHERE product_id = 1;

@@ -8,9 +8,7 @@ import React from 'react'
 const Products = (props) => {
 const [products, setProducts] = useState([])
 const [search, setSearch] = useState('')
-const [click, setClick] = useState(false)
 
-const handleClick = () => setClick(!click)
 
 const {user} = useSelector((store) => store.auth)
 const {cart} = useSelector((store) => store.cartReducer)
@@ -21,19 +19,19 @@ const dispatch = useDispatch()
     axios.get('/api/products')
     .then((res) => {
     setProducts(res.data)
+ 
     })
     .catch(err => console.log(err))
   }, [])
 
-  // const handleFilter = (product_id) => {
-
-  // }
 
   const handleAddToCart = (product_id) => {
     const product = cart.find((product) => product.product_id === product_id)
+ 
     console.log(product)
     console.log(cart, 'this is my cart')
- 
+
+  
     if(!product){
       axios.post(`/api/cart/${product_id}`)
       .then((res) => {
@@ -66,17 +64,11 @@ const dispatch = useDispatch()
     return product.product_name.toLowerCase().includes(search.toLowerCase())
   })
 
-  const cartQuantity = () => {
-let count = 0;
-   if (handleAddToCart === click){
-     count++
-     return count
-   }
-   console.log(count)
-  }
+ 
   return(
     <div className = 'products'>
-      <input type='text' placeholder='filter' onChange= { e => setSearch(e.target.value)}></input>
+      <br/><br/>
+      <input className='filter' type='text' placeholder='filter' onChange= { e => setSearch(e.target.value)}></input>
       
     
       <div className = 'product-list'>
@@ -85,11 +77,12 @@ let count = 0;
           <div className ='oneproduct' key={product.product_id}>
             <img className = 'productimage' src={product.product_image} alt="earrings"/> 
             <h5>{product.product_name}</h5>
-            {user && <button className = 'addtobag' onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
+            {user && <button  onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
+   
           </div>
         )
       })} 
-     {cartQuantity}
+    
       </div>
     </div>
   )

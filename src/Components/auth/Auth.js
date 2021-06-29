@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import axios from 'axios'
-import {setUser} from '../redux/authReducer'
-import {setCart} from '../redux/cartReducer'
+import {setUser} from '../../redux/authReducer'
+import {setCart} from '../../redux/cartReducer'
 import {useDispatch} from 'react-redux'
 import { Link}  from 'react-router-dom';
 
@@ -37,9 +37,9 @@ const Auth = (props) => {
       </div>
     
       <p>email*</p>
-      <input className = 'email' value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input className = 'email' value={email} type = 'email' onChange={(e) => setEmail(e.target.value)} />
       <p>password*</p>
-      <input className = 'password' value={password} onChange={(e) => setPassword(e.target.value)} />
+      <input className = 'password' value={password} type = 'password' onChange={(e) => setPassword(e.target.value)} />
       <div className = 'authbuttons'>
       <button className = 'login' onClick={handleLogin}>Login</button>
       <p className='forgotpw'>Forgot your password?</p>
