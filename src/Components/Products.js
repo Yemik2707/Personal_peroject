@@ -77,6 +77,8 @@ const dispatch = useDispatch()
           <div className ='oneproduct' key={product.product_id}>
             <img className = 'productimage' src={product.product_image} alt="earrings"/> 
             <h5>{product.product_name}</h5>
+            <h5>{product.product_price}</h5>
+          
             {user && <button  onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
    
           </div>

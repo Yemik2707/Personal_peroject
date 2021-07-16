@@ -218,8 +218,8 @@ p {
 
 /* aboutus */
 .aboutus {
-  background: url("https://res.cloudinary.com/dgaapgd2f/image/upload/v1623727605/28EC3992-98BA-4DD2-8D8C-F6BC813D3189_qzp9pk.jpg")
-    center center/cover no-repeat;
+  /* background: url("https://res.cloudinary.com/dgaapgd2f/image/upload/v1623727605/28EC3992-98BA-4DD2-8D8C-F6BC813D3189_qzp9pk.jpg")
+    center center/cover no-repeat; */
 
   height: 150vh;
   min-width: 100%;
@@ -254,7 +254,7 @@ footer {
   align-items: center;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-
+  /* 
   /* 
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   height: 100px;
@@ -318,9 +318,9 @@ button {
   width: calc(100% - 30px);
   height: 40px;
   margin: 40px 15px 0;
-  background-color: #f6a4eb;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #ffb9f6;
+  background-color: black;
+  /* box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #ffb9f6; */
   border-radius: 4px;
   color: #fff;
   font-weight: 600;
@@ -331,9 +331,9 @@ button {
 }
 
 button:active {
-  background-color: #d782d9;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #e298d8;
+  background-color: black;
+  /* box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #e298d8; */
   transform: scale(0.99);
 }
 

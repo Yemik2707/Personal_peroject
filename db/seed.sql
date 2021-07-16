@@ -1,7 +1,12 @@
 //instructions for inserting products to the products table 
+-- ALTER TABLE table_name
+-- ADD column_name datatype;--- for future refrences this is how I can ass new lines in existing tables
 INSERT INTO products
 (product_name, product_image)
 VALUES
+-- The below quiery is how you can add a new column 
+ALTER TABLE products
+ADD price INT;
 ('Black polymer','https://res.cloudinary.com/dgaapgd2f/image/upload/v1623093255/AAFA2FB9-0861-4A95-B973-C4A3F91532C7_1_201_a_v8lwic.jpg' )
 ('Green & gold set for him & her', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623097101/F88EA229-7623-4B22-811A-3188E74C2E68_1_201_a_gdhi5c.jpg')
 ('Cyan dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623093229/B1A1A1CC-2BD2-4FFF-8D2E-2184C20245F1_1_201_a_pfuhne.jpg')
@@ -28,6 +33,11 @@ VALUES
 ('Purple', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624750758/640E18E8-2766-41BD-8806-CB70E5385F92_dyrvgf.jpg')
 ('Gold & black', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624750793/172B64AD-E24A-4A1A-8E15-6706E1DB7703_1_201_a_ndazxz.jpg')
 ('Orange', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1624750837/5E862F47-9C19-40C8-83BC-96A99B4CF495_g7czdp.jpg')
+('Green and gold statement earrings', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1626121907/7B728B8D-78CD-4E1F-A5D8-9F46D216BBA1_1_201_a_wlzlb6.jpg')
+('Yellow dangle with leaves print', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1626376618/AE0CE5C1-2C09-426A-ACD9-319FFECFBF97_1_201_a_grmwpq.jpg')
+('Space green dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1626376604/E64A7E5C-BE63-4C2A-B9E4-3ED0142C80D5_1_201_a_pc3jgj.jpg')
+('White and gold', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1626376593/FBCB809E-AFB2-4A21-82DE-5D784B217255_1_201_a_eioqoe.jpg')
+('Light blue dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1626376581/B9C26C8E-16EC-4934-BE3F-87B38E13E079_1_201_a_m3hx19.jpg')
 UPDATE products 
 SET product_name = 'green earrings' 
 WHERE product_id = 1;

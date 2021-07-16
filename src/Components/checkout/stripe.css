@@ -1,0 +1,35 @@
+.pay-form {
+  background-color: #e9c46a;
+  width: 500px;
+  height: 100px;
+  border: 2px solid black;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  margin-bottom: 90px;
+}
+
+.payment-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  background-color: #264653;
+  position: fixed;
+}
+
+.FormGroup {
+  height: 100px;
+  border: none;
+}
+
+#thank-you {
+  margin-left: 50px;
+}
+#thank-you:hover {
+  color: blue;
+}
+#check-button {
+  margin-left: 187px;
+}

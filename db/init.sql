@@ -17,11 +17,7 @@ product_name VARCHAR(100),
 product_price INT
 product_image VARCHAR(2000)
 );
--- CREATE TABLE design (
--- design_id SERIAL PRIMARY KEY,
--- user_id INT REFERENCES users(user_id),
--- design_image VARCHAR(2000)
--- );
+
 
 CREATE TABLE carts 
 cart_id  SERIAL PRIMARY KEY,
@@ -35,9 +31,3 @@ cart_id INT REFERENCES carts(cart_id),
 product_id INT REFERENCES products (product_id),
 quantity INT
 );
--- CREATE TABLE design_cart_junction (
--- design_cart_id SERIAL PRIMARY KEY,
--- cart_id INT REFERENCES carts(cart_id),
--- design_id INT REFERENCES design (design_id)
--- quantity INT
--- );

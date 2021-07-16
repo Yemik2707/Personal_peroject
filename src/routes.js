@@ -3,7 +3,7 @@ import Auth from './Components/auth/Auth'
 import Cart from './Components/Cart'
 import Register from './Components/auth/Register'
 import Products from './Components/Products'
-import Checkout from './Components/checkout/Checkout'
+import StripeContainer from './Components/checkout/StripeContainer'
 import AboutUs from './Components/AboutUs'
 import Signin from './Components/auth/Signin'
 
@@ -15,7 +15,7 @@ export default (
 <Route path='/auth' component={Auth} />
 <Route path= '/register' component = {Register}/>
 <Route path='/cart' component={Cart} />
-<Route path='/checkout' component={Checkout} />
+<Route path='/StripeContainer' component={StripeContainer} />
 <Route path='/aboutus' component={AboutUs} />
 <Route path='/signin' component={Signin} />
 

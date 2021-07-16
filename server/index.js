@@ -3,24 +3,22 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
-// const stripe = require("stripe") (process.env.STRIPE_SECERET_TEST)
-// const bodyParser = require("body-parser")
-// const cors =require("cors")
+const cors = require("cors")
 // Controllers 
 const authCtrl = require('./controllers/authController')
 const productCtrl = require('./controllers/productController')
 const cartCtrl = require('./controllers/cartController')
-// const paymentCtrl = require('./controllers/PaymentCtrl')
-// app instance created 
-const app = express();
+const paymentCtrl = require('./controllers/paymentController')
+// const sessionCtrl = require('./controllers/sessionCtrl')
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
+// app instance created 
+const app = express();
 
 // top level middeleware
-// app.use(bodyParser.urlencoded({extended: true}))
-// app.use(bodyParser.json())
-// app.use(cors())
+
+app.use(cors())
 app.use(express.json());
 app.use(session({
   secret: SESSION_SECRET,
@@ -65,7 +63,8 @@ massive({
         app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}.`))
       })
       .catch(err => console.log(err));
-    
+ 
+ 
 // Endpoints
 
 // Auth
@@ -83,9 +82,13 @@ app.post('/api/cart/:product_id', cartCtrl.addToCart)
 app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
 app.put('/api/cart/:product_id', cartCtrl.changeCartQty)
 
- 
+ //session
+// app.post('/api/sessions/appointments/:student_id', sessionCtrl.addSession)
+// app.delete('/api/session/remove', sessionCtrl.cancelSession)
+// app.get('/api/session/appointment/:student_id', sessionCtrl.getSessions)
+// app.get('/api/session/current/appointment/:student_id', sessionCtrl.getUserLatestSession)
 
 // Checkout
 
-// app.post('/payment', cors(), paymentCtrl.addPayment)
+app.get('/api/payment/cart_id', cors(), paymentCtrl.addPayment)
 
