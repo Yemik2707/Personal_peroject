@@ -178,30 +178,30 @@ p {
 .remove:hover,
 .minus:hover,
 .plus:hover {
-  border: solid 2px black;
+  border: solid 2px rgb(51, 50, 50);
 }
 
 /* PRODUCTS */
 .filter {
   width: 25vw;
 }
-.addtobag {
+/* .addtobag {
   color: black;
   width: 150px;
   height: 15px;
   background-color: transparent;
   border: solid 1px black;
   font-size: x-small;
-}
+} */
 
 .productimage {
   position: relative;
-  min-width: 200px;
-  height: 200px;
-  padding: 20px;
+  min-width: 400px;
+  height: 400px;
+  padding: 15px;
   display: block;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .productimage:hover {
   box-shadow: 1px 1px 1px 1px rgb(134, 130, 130);

@@ -69,8 +69,6 @@ const dispatch = useDispatch()
     <div className = 'products'>
       <br/><br/>
       <input className='filter' type='text' placeholder='filter' onChange= { e => setSearch(e.target.value)}></input>
-      
-    
       <div className = 'product-list'>
       {filteredProducts.map((product) => {
         return (
@@ -80,6 +78,7 @@ const dispatch = useDispatch()
             <h5>{product.product_price}</h5>
           
             {user && <button  onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
+            <br/><br/>
    
           </div>
         )

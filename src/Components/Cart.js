@@ -52,14 +52,16 @@ const Cart= (props) => {
       
     return (
     <div className ='carts'>
-       <h2> Your Bag </h2>
+      <br/><br/>
+       
+       {cart.length === 0 ? <p className = 'bagempty'>Your bag is empty <i class="fas fa-frown"/></p> : null}
       {cart.map((products) => {
         return(
           <div  className='oneitem' key={products.product_cart_id}>
 
             <img className = 'cartimage' src={products.product_image} alt="earrings"/> 
             <h4>{products.product_name}</h4>
-            <h5>{products.product_price * products.quantity}</h5>
+            <h5>{products.product_price}</h5>
             
             <div classname = 'deletecartitem'>
             <button className='remove'onClick={() => handleDeleteFromCart(products.product_id)}>delete</button>
@@ -79,8 +81,7 @@ const Cart= (props) => {
    
             <Link className='checkout' to='/StripeContainer'> <button>CONTINUE TO CHECKOUT</button></Link>
             <br/><br/>
-{/*   
-  <p className = 'bagempty' >bag is empty <i class="fas fa-frown"/></p> */}
+
     </div>
     )
 }
