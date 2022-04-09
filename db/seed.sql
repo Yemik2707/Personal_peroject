@@ -1,12 +1,19 @@
 //instructions for inserting products to the products table 
--- ALTER TABLE table_name
--- ADD column_name datatype;--- for future refrences this is how I can ass new lines in existing tables
 INSERT INTO products
 (product_name, product_image)
 VALUES
+(put product name, put url for product image)
 -- The below quiery is how you can add a new column 
 ALTER TABLE products
 ADD price INT;
+('Pin set for Men'. 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999472/869B23B4-91A9-4ED1-BC3F-34CB7F56CE42_1_201_a_xdp8cm.jpg')
+('Light blue Mesob', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999452/A3977C6C-C062-4067-A1FA-9A94A8306594_1_201_a_xepbmy.jpg')
+('Blue shimmer', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999428/0ADCA85F-BDE9-4448-83D0-92528A9C3ED1_1_201_a_bd7dgu.jpg')
+('Brown, floral', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999412/683CBC30-5AA1-43BA-8BD2-1DB7A65B9604_1_201_a_bz9all.jpg')
+('Pink floral', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999397/44CC0B8F-4D37-4102-BCC9-1552071E9C5E_1_201_a_tdruh9.jpg')
+('Purple floral', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999318/DA718DD2-6A35-4DF0-9BDE-841C8AFD09A3_1_201_a_tg7ys3.jpg')
+('Orange shimmer','https://res.cloudinary.com/dgaapgd2f/image/upload/v1633999166/EF7D3A59-A273-44BA-8A03-FF6EAF427165_1_201_a_qmepep.jpg')
+('Green shimer', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1632371264/2525BF97-C350-4C38-AE05-51D9D180D98B_1_201_a_wa55qs.jpg')
 ('Black polymer','https://res.cloudinary.com/dgaapgd2f/image/upload/v1623093255/AAFA2FB9-0861-4A95-B973-C4A3F91532C7_1_201_a_v8lwic.jpg' )
 ('Green & gold set for him & her', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623097101/F88EA229-7623-4B22-811A-3188E74C2E68_1_201_a_gdhi5c.jpg')
 ('Cyan dangle', 'https://res.cloudinary.com/dgaapgd2f/image/upload/v1623093229/B1A1A1CC-2BD2-4FFF-8D2E-2184C20245F1_1_201_a_pfuhne.jpg')

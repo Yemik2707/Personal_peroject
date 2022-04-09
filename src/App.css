@@ -128,11 +128,12 @@ p {
   background: rgb(224, 235, 234);
   min-width: 300px;
   min-height: 100vh;
+  /* display: flex; */
 }
 .cartimage {
-  position: relative;
-  min-width: 200px;
-  height: 200px;
+  /* position: relative;
+  min-width: 350px;
+  height: 350px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -140,7 +141,15 @@ p {
   display: block;
   object-fit: cover;
   transition: all 0.2s linear;
-  border-radius: 10px;
+  border-radius: 10px; */
+  position: relative;
+  min-width: 300px;
+  height: 300px;
+  margin-left: 30px;
+  padding: 15px;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
 }
 .editcart {
   padding: 10px;
@@ -171,6 +180,7 @@ p {
 .oneitem {
   padding-bottom: 20px;
   padding-inline-start: 20px;
+  display: flex;
 }
 /*             --------      ---------           */
 
@@ -196,8 +206,9 @@ p {
 
 .productimage {
   position: relative;
-  min-width: 400px;
-  height: 400px;
+  min-width: 350px;
+  height: 350px;
+  margin-left: 30px;
   padding: 15px;
   display: block;
   object-fit: cover;
@@ -218,23 +229,22 @@ p {
 
 /* aboutus */
 .aboutus {
-  /* background: url("https://res.cloudinary.com/dgaapgd2f/image/upload/v1623727605/28EC3992-98BA-4DD2-8D8C-F6BC813D3189_qzp9pk.jpg")
-    center center/cover no-repeat; */
-
-  height: 150vh;
+  height: 100vh;
   min-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(142, 255, 202, 0.4);
   object-fit: contain;
-  color: black;
+  color: Black;
 }
 
 .story {
-  display: flex;
-  flex-wrap: wrap;
+  margin: 20px;
+  background: url("https://res.cloudinary.com/dgaapgd2f/image/upload/v1634001386/CE925DF6-A945-4427-9C89-1D633BD56C64_1_201_a_qjxuzo.jpg")
+    center center/cover no-repeat;
+  height: 70vh;
+  width: 50vw;
 }
 
 /* <i class="fas fa-shopping-bag"/>  */

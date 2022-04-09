@@ -3,6 +3,7 @@ import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
 import React from 'react'
+import { ListGroupItem } from 'react-bootstrap'
 
 
 const Products = (props) => {
@@ -63,6 +64,7 @@ const dispatch = useDispatch()
   const filteredProducts = products.filter(product => {
     return product.product_name.toLowerCase().includes(search.toLowerCase())
   })
+  
 
  
   return(
@@ -75,7 +77,7 @@ const dispatch = useDispatch()
           <div className ='oneproduct' key={product.product_id}>
             <img className = 'productimage' src={product.product_image} alt="earrings"/> 
             <h5>{product.product_name}</h5>
-            <h5>{product.product_price}</h5>
+            <h5>${product.product_price}</h5>
           
             {user && <button  onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
             <br/><br/>
