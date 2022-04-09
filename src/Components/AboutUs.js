@@ -4,11 +4,14 @@ const AboutUs = (props) => {
 
     return (
         <div className = 'aboutus'>
-           <h1>About Us</h1>
-           <br/><br/>
-           <br/><br/>
-           <h2>Welcome to my little pandemic hobby:
-        Handmade polymer clay earrings and accessories ♥️ </h2>
+           <h1>About Me</h1>
+           
+           <h3>Hi everyone my name is Rahwa and I love making clay earrings!         <br/><br/>
+               I stumbled upon this craft during the pandemic and I haven’t         <br/><br/>
+               stopped since! I love working with my hands and I love experimenting         <br/><br/>
+               with different colors shapes and designs! Thank you for stopping by         <br/><br/>
+               and thank you for your support  ♥️ </h3>
+  
            <div className='story'>
          
            </div>
