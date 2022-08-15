@@ -3,7 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
-const cors = require("cors")
+const cors = require("cors");
+// todo: add a stripe key 
+const stripe = require("stripe")("pk_live_51J2NLDFLuspDFFBUHJhwSU2hBUdfj5AHlIBZSCJX1ikrzj1Bk9CNL0vfwO1GuOQ7tBzn4HxThgbxfVpQh26k4FFB00jvcNFXkc")
+const uuid = require("uuid")
 // Controllers 
 const authCtrl = require('./controllers/authController')
 const productCtrl = require('./controllers/productController')
@@ -13,8 +16,15 @@ const paymentCtrl = require('./controllers/paymentController')
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
+const  path = require ('path')
+
 // app instance created 
 const app = express();
+
+app.use(express.static(__dirname + '/..build'))
+app.get('*', (res, req) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 // top level middeleware
 
@@ -28,31 +38,31 @@ app.use(session({
 }))
 
 
-// stripe
-// app.post("/payment", cors(), async (req, res) => {
-//   let{amount, id} =req.body
-//   try {
-//     const payment = await stripe.paymentIntents.create({
-//       amount,
-//       currency: "USD",
-//       description:"",
-//       payment_method: id,
-//       confirm:true
-//     })
-//     console.log("Payment", payment)
-//     res.json({
-//       message: "Payment successful",
-//       success:true
-//     })
-//   } catch (error) {
-//     console.log("Error", error)
-//     res.json({
-//       message: "Payment failed",
-//       success:false
-//     })
-//   }
-// })
-// Database conncetion 
+
+app.post("/payment", (req, res) => {
+  const {product, token} = req.body;
+  console.log("PRODUCT", product);
+  console.log("PRICE", product.price);
+  const idempontencyKey = uuid()
+
+  return stripe.customers.create({
+    email:token.email,
+    source: token.id
+  }).then(customer => {
+    stripe.charges.create({
+      amount: product.price * 100,
+      currency: 'used',
+      customer: customer.id,
+      receipt_email: token.email,
+      description:`product.name`
+    }, {idempontencyKey})
+  })
+  .then(result => res.status(200).json(result))
+  .catch(err => console.log(err))
+})
+
+
+
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}

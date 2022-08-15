@@ -71,14 +71,16 @@ const dispatch = useDispatch()
     <div className = 'products'>
       <br/><br/>
       <input className='filter' type='text' placeholder='filter' onChange= { e => setSearch(e.target.value)}></input>
+      <br/><br/>
       <div className = 'product-list'>
       {filteredProducts.map((product) => {
         return (
           <div className ='oneproduct' key={product.product_id}>
+            <div className = "click">
             <img className = 'productimage' src={product.product_image} alt="earrings"/> 
-            <h5>{product.product_name}</h5>
-            <h5>${product.product_price}</h5>
-          
+            <h3>{product.product_name}</h3>
+            <h3>${product.product_price}</h3>
+            </div>
             {user && <button  onClick={() => handleAddToCart(product.product_id)}>ADD TO BAG</button>}
             <br/><br/>
    
