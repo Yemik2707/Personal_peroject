@@ -11,17 +11,17 @@ const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 export default function StripeContainer(){
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
       
-    //     useEffect(() => {
-    //       axios.get('/api/payment/cart_id')
-    //         .then((res) => {
-    //           console.log(res.data)
-    //           dispatch(setCart(res.data))
-    //         }).catch(err => {
-    //           console.log(err)
-    //         })
-    //       }, [dispatch])
+        useEffect(() => {
+          axios.get('/api/payment/cart_id')
+            .then((res) => {
+              console.log(res.data)
+              dispatch(setCart(res.data))
+            }).catch(err => {
+              console.log(err)
+            })
+          }, [dispatch])
     return (
            <Elements stripe={stripeTestPromise}>
            <PaymentForm />
