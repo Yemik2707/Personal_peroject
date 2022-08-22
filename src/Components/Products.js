@@ -16,14 +16,14 @@ const {cart} = useSelector((store) => store.cartReducer)
 
 const dispatch = useDispatch()
 
-  useEffect(() => {
-    axios.get('/api/products')
-    .then((res) => {
-    setProducts(res.data)
+  // useEffect(() => {
+  //   axios.get('/api/products')
+  //   .then((res) => {
+  //   setProducts(res.data)
  
-    })
-    .catch(err => console.log(err))
-  }, [])
+  //   })
+  //   .catch(err => console.log(err))
+  // }, [])
 
 
   const handleAddToCart = (product_id) => {
