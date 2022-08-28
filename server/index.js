@@ -23,9 +23,7 @@ const app = express();
 
 
 app.use(express.static(__dirname + '/../build'))
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build/index.html'))
-});
+
 
 // top level middeleware
 
@@ -102,4 +100,8 @@ app.put('/api/cart/:product_id', cartCtrl.changeCartQty)
 // Checkout
 
 app.get('/api/payment/cart_id', cors(), paymentCtrl.addPayment)
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+});
 
